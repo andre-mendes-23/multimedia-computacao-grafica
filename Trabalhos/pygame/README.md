@@ -1,0 +1,1 @@
+20/10/2024 a 21/10/2024 - Definição de todas as configurações do jogo no ficheiro settings.py - 8 horas
