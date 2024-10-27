@@ -1,44 +1,63 @@
 # Nome do ficheiro: settings.py
-# Descrição: Este ficheiro contém as configurações globais do jogo "Space Shooter 2D"~
+# Descrição: Este ficheiro contém as variáveis de configuração do jogo "Jogo de Tiro".
 
-# Importar a biblioteca pygame
+# Importa a biblioteca pygame
 import pygame
 
-# Nome do jogo
-GAME_NAME = "Space Shooter 2D"
+# Define o título da janela do jogo
+GAME_TITLE = "Jogo de Tiro"
 
-# Dimensões da tela
-SCREEN_WIDTH = 800  # Largura da janela do jogo em pixels.
-SCREEN_HEIGHT = 600  # Altura da janela do jogo em pixels.
+# Define a largura e altura da janela em pixels
+WIDTH = 800
+HEIGHT = 600
 
-# Cores
-WHITE = (255, 255, 255)  # Cor branca em formato RGB.
-BLACK = (0, 0, 0)  # Cor preta em formato RGB.
-RED = (255, 0, 0)  # Cor vermelha em formato RGB.
-GREEN = (0, 255, 0)  # Cor verde em formato RGB.
-BLUE = (0, 0, 255)  # Cor azul em formato RGB.
-YELLOW = (255, 255, 0)  # Cor amarela em formato RGB.
-PURPLE = (128, 0, 128)  # Cor roxa em formato RGB.
+# Define a taxe de frames por segundo
+FPS = 60
 
-# FPS
-FPS = 60  # Taxa de quadros por segundo para o jogo.
-
-# Clock
+# Define um objeto Clock para controlar o tempo de jogo
 CLOCK = pygame.time.Clock()
 
-# Fonte do jogo
-FONT_NAME = "Arial"  # Fonte a ser utilizada no texto do jogo.
+# Define a paleta de cores do jogo no formato RGB
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+RED = (255, 0, 0)
+GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
+YELLOW = (255, 255, 0)
 
-# Configurações do jogador
-PLAYER_SPEED = 5  # Velocidade do jogador em pixels por frame.
-BULLET_SPEED = 10  # Velocidade das balas em pixels por frame.
-ENEMY_SPEED = 2  # Velocidade dos inimigos em pixels por frame.
-ENEMY_SPAWN_RATE = 30  # Número de frames para o surgimento de um novo inimigo.
-INITIAL_LIVES = 3  # Número inicial de vidas do jogador.
-
-# Dificuldades
-DIFFICULTY_SETTINGS = {  # Dicionário contendo as configurações para diferentes níveis de dificuldade.
-    "Easy": {"enemy_speed": 1, "points_needed": 1000, "wave_size": 5, "max_waves": 10},  # Configurações para dificuldade fácil.
-    "Medium": {"enemy_speed": 1.5, "points_needed": 3000, "wave_size": 7, "max_waves": 12},  # Configurações para dificuldade média.
-    "Hard": {"enemy_speed": 2, "points_needed": 5000, "wave_size": 10, "max_waves": 15},  # Configurações para dificuldade difícil.
+# Define um dicionário que guarda as configurações de cada nível de dificuldade do jogo
+DIFFICULTY_SETTINGS = {
+    "Easy": { # Configurações para o nível de dificuldade Easy
+        "lives": 10, # Quantidade de vidas iniciais
+        "points_to_win": 5000, # Pontos necessários para vencer o jogo e passar para o próximo nível
+        "bullets": 40, # Quantidade de balas do jogador disponíveis
+        "enemies": 15, # Número de inimigos no nível
+        "enemy_speed": 2, # Velocidade dos inimigos
+        "bullet_speed": 5, # Velocidade das balas disparadas pelo jogador
+        "player_speed": 4, # Velocidade do jogador
+        "points_por_enemy": 333 # Pontos por inimigo
+    },
+    "Medium": { # Configurações para o nível de dificuldade Medium
+        "lives": 6, # Quantidade de vidas iniciais
+        "points_to_win": 7500, # Pontos necessários para vencer o jogo e passar para o próximo nível
+        "bullets": 35, # Quantidade de balas do jogador disponíveis
+        "enemies": 20, # Número de inimigos no nível
+        "enemy_speed": 3, # Velocidade dos inimigos
+        "bullet_speed": 6, # Velocidade das balas disparadas pelo jogador
+        "player_speed": 5, # Velocidade do jogador
+        "points_por_enemy": 375 # Pontos por inimigo
+    },
+    "Hard": { # Configurações para o nível de dificuldade Hard
+        "lives": 4, # Quantidade de vidas iniciais
+        "points_to_win": 10000, # Pontos necessários para vencer o jogo e passar para o próximo nível
+        "bullets": 30, # Quantidade de balas do jogador disponíveis
+        "enemies": 25, # Número de inimigos no nível
+        "enemy_speed": 4, # Velocidade dos inimigos
+        "bullet_speed": 7, # Velocidade das balas disparadas pelo jogador
+        "player_speed": 6, # Velocidade do jogador
+        "points_por_enemy": 400 # Pontos por inimigo
+    }
 }
+
+# Define o nome do ficheiro onde as pontuacões do jogo ficam guardadas
+SCORE_FILE = "scores.csv"
