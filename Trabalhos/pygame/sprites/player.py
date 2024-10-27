@@ -22,7 +22,7 @@ class Player(pygame.sprite.Sprite):
         # Chama o construtor da classe pai (Sprite)
         super().__init__()
 
-        # Cria uma superfície de 50x50 pixels para o jogador com uma transparência
+        # Cria uma superfície para o jogador com uma transparência
         self.image = pygame.Surface((50, 50), pygame.SRCALPHA)
 
         # Desenha um triângulo verde para representar o jogador
@@ -34,7 +34,7 @@ class Player(pygame.sprite.Sprite):
         # Define a posição inicial do jogador no centro da largura e 50 pixels acima da borda inferior da tela
         self.rect.center = (WIDTH // 2, HEIGHT - 50)
 
-        # Armazena a velocidade do jogador
+        # Define a velocidade do jogador
         self.speed = speed
 
     def update(self):
