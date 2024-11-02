@@ -1,63 +1,107 @@
 # Nome do ficheiro: settings.py
-# Descrição do ficheiro: Este ficheiro contém as configurações globais de um jogo com Pygame
+# Descrição: Este ficheiro contém as definições para um jogo desenvolvido em Pygame.
 
-# Importa as biblioteca pygame
+# Importa a biblioteca pygame
 import pygame
 
-# Define uma constante para guardar o título do jogo
-GAME_TITLE = "Jogo de Tiro Avançado"
+# Define uma constante para o nome do jogo
+GAME_TITLE = "Aventura Espacial"
 
-# Define duas constantes para guardar a largura e a altura da janela do jogo
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
+# Define uma constante para a largura da janela do jogo
+WIDTH = 800
 
-# Define uma constante para guardar a taxa de frames por segundo (FPS)
+# Define uma constante para a altura da janela do jogo
+HEIGHT = 600
+
+# Define uma constante para a velocidade do jogo
 FPS = 60
 
-# Define uma constanste para controlar a taxa de frames do jogo através do objeto do Pygame, Clock
+# Define uma constante que cria um relogio para o jogo
 CLOCK = pygame.time.Clock()
 
-# Define constantes para guardar a configuração de cada cor do jogo no formato RGB
-WHITE = (255, 255, 255) # Cor branca
-BLACK = (0, 0, 0) # Cor preta
-RED = (255, 0, 0) # Cor vermelha
-GREEN = (0, 255, 0) # Cor verde
-BLUE = (0, 0, 255) # Cor azul
-YELLOW = (255, 255, 0) # Cor amarela
+# Define uma constante para o nome da fonte utilizada no jogo
+FONT_NAME = 'arial'
 
-# Define um dicionário para armazenar as configurações de cada dificuldade do jogo
-DIFFICULTY_SETTINGS = {
-    "Easy": { # Configurações da dificuldade "Easy"
-        "lives": 10, # Número de vidas iniciais do jogador na dificuldade
-        "bullets": 40, # Número de balas disponíveis para o jogador disparar
-        "bullet_speed": 5, # Velocidade das balas disparadas pelo jogador
-        "player_speed": 4, # Velocidade do jogador
-        "enemy_speed": 2, # Velocidade dos inimigos
-        "enemy_count": 15, # Número de inimigos da dificuldade
-        "points_per_enemy": 333, # Pontos ganhos pelo jogador por matar um inimigo
-        "points_to_win": 5000 # Número de pontos necessários para vencer o jogo
-    },
-    "Medium": { # Configurações da dificuldade "Medium"
-        "lives": 6, # Número de vidas iniciais do jogador na dificuldade
-        "bullets": 35, # Número de balas disponíveis para o jogador disparar
-        "bullet_speed": 6, # Velocidade das balas disparadas pelo jogador
-        "player_speed": 5, # Velocidade do jogador
-        "enemy_speed": 3, # Velocidade dos inimigos
-        "enemy_count": 20, # Número de inimigos da dificuldade
-        "points_per_enemy": 375, # Pontos ganhos pelo jogador por matar um inimigo
-        "points_to_win": 7500 # Número de pontos necessários para vencer o jogo
-    },
-    "Hard": { # Configurações da dificuldade "Hard"
-        "lives": 4, # Número de vidas iniciais do jogador na dificuldade
-        "bullets": 30, # Número de balas disponíveis para o jogador disparar
-        "bullet_speed": 7, # Velocidade das balas disparadas pelo jogador   
-        "player_speed": 6, # Velocidade do jogador    
-        "enemy_speed": 4, # Velocidade dos inimigos
-        "enemy_count": 25, # Número de inimigos da dificuldade
-        "points_per_enemy": 400, # Pontos ganhos pelo jogador por matar um inimigo
-        "points_to_win": 10000 # Número de pontos necessários para vencer o jogo
-    },
+# Define uma constante para o tamanho da fonte utilizada no jogo
+FONT_SIZE = 30
+
+# Define uma constante para o tamanho da fonte do texto dos botões do jogo
+BUTTON_FONT_SIZE = 25
+
+# Define uma constante para a cor do fundo do jogo como preto no formato RGB
+BACKGROUND_COLOR = (0, 0, 0)
+
+# Define uma constante para a cor dos textos do jogo como branco no formato RGB
+TEXT_COLOR = (255, 255, 255)
+
+# Define uma constante para a cor dos botões do jogo como azul no formato RGB
+BUTTON_COLOR = (50, 150, 50)
+
+# Define uma constante para a cor dos textos dos botões do jogo como branco no formato RGB
+BUTTON_TEXT_COLOR = (255, 255, 255)
+
+# Define uma constante com um dicionário para os textos do menu principal do jogo
+MAIN_MENU_TEXTS = {
+    "title": "Bem-vindo ao jogo 'Aventura Espacial' ",
+    "play": "Jogar",
+    "settings": "Definições",
+    "highscores": "Melhores Pontuações",
+    "instructions": "Instruções",
+    "quit": "Sair",
 }
 
-# Define uma constante para guardar o nome do ficheiro onde os pontos do jogador serão guardados
+# Define uma constante com um dicionário para os textos do menu de definições do jogo
+SETTINGS_MENU_TEXTS = {
+    "title": "Definições do Jogo",
+    "difficulty": "Dificuldade",
+    "back": "Voltar",
+}
+
+# Define uma constante com um dicionário para os textos da janela de instruções do jogo
+INSTRUCTIONS_MENU_TEXTS = {
+    "title": "Instruções do Jogo",
+    "text": "Utilize as setas para movimentar o personagem e a barra de espaco para atirar.",
+    "back": "Voltar",
+}
+
+# Define uma constante com um dicionário para os textos da janela de melhores pontuações do jogo
+HIGHSCORES_MENU_TEXTS = {
+    "title": "Melhores Pontuações",
+    "back": "Voltar",
+}
+
+# Define uma constante com um dicionário para os textos da janela de fim de jogo
+GAME_OVER_MENU_TEXTS = {
+    "title": "Perdeste o Jogo!",
+    "score": "Pontos",
+    "back": "Voltar",
+}
+
+# Define uma constante com um dicionário para os textos da janela de vitória do jogo
+VICTORY_MENU_TEXTS = {
+    "title": "Venceste o Jogo!",
+    "score": "Pontos",
+    "back": "Voltar",
+}
+
+# Define uma constante para apresentar o texto das vidas do jogador no jogo
+PLAYER_LIVES_TEXT = "Vidas: "
+
+# Define uma constante para apresentar o texto da pontuação do jogador no jogo
+PLAYER_SCORE_TEXT = "Pontuação: "
+
+# Define uma constante com uma dicionário com as definições de cada nível de dificuldade do jogo
+DIFFICULTY_SETTINGS = {
+    "easy": {"meteors": 5, "lives": 11, "points_to_level": 5000, "points_per_meteor": 1000, "ship_speed": 5, "meteor_speed": 2, "bullet_speed": 10},
+    "medium": {"meteors": 15, "lives": 8, "points_to_level": 15000, "points_per_meteor": 1000, "ship_speed": 6, "meteor_speed": 3, "bullet_speed": 12},
+    "hard": {"meteors": 30, "lives": 5, "points_to_level": 30000, "points_per_meteor": 1000, "ship_speed": 7, "meteor_speed": 4, "bullet_speed": 14},
+}
+
+# Define uma constante com um nome do ficheiro das pontuações do jogo
 SCORES_FILE = "scores.csv"
+
+# Define uma constante com o caminho do ficheiro da imagem da nave espacial
+SPACESHIP_IMAGE = "spaceship.png"
+
+# Define uma constante com o caminho do ficheiro da imagem do meteoro
+METEOR_IMAGE = "meteor.png"
